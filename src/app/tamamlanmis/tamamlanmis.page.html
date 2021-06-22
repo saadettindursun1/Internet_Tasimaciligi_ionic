@@ -1,0 +1,51 @@
+
+
+  <ion-img [src]='"../../assets/BUTONLAR/üst.jpg"'></ion-img>
+
+<ion-content>
+ 
+  <ion-tabs >
+    <ion-tab-bar slot="top" class=" mb-2">
+      <ion-tab-button [href]='"soforyardim"'>
+        <ion-icon name="eye-outline"></ion-icon>
+        <ion-label style="padding-bottom:5px ;">Yol yardım</ion-label>
+       <!-- <ion-badge>6</ion-badge> -->
+      </ion-tab-button>
+  
+      <ion-tab-button [href]='"tamamlanmis"'   class="table-danger">
+        <ion-icon name="git-compare-outline"></ion-icon>
+        <ion-label style="padding-bottom:5px ;">Tamamlanmış İşler</ion-label>
+      </ion-tab-button>
+  
+  
+      <ion-tab-button [href]='"sofor-ekran"'>
+        <ion-icon name="cog-outline"></ion-icon>
+        <ion-label style="padding-bottom:5px ;">İş İlanları</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button [href]='"sofor-ayar"' >
+        <ion-icon name="cog-outline"></ion-icon>
+        <ion-label style="padding-bottom:5px ;">Diğer İşlemler</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+<form #ilanlar="ngForm">
+<ion-list class="mt-5" >
+  <h5 class="ml-4">Kazanılan Toplam Para: {{toplam}}</h5>
+  <ion-card class="ilan mt-3 mr-3 ml-3" *ngFor="let item of kayitlar">
+    <ion-card-title class="alert-primary text-center">{{item.yuklemeNoktasi}} - {{item.indirmeNoktasi}} Arası</ion-card-title>
+    <ion-card-content>
+      <ion-label class="float-right">{{item.kayitTarih.replace('/Date(','').replace(')/','') |
+        date:"dd/MM/yyyy"}}</ion-label><br>  {{this.toplama(item.ucret)}}
+       <h2 class="text-center"><strong> {{item.isletmeAdi}} </strong> </h2>
+      {{item.yukCins}} <br> {{item.yukAgirlik}} <br> {{item.ucret}} ₺</ion-card-content>
+    <ion-card-subtitle class="alert-warning">
+ </ion-card-subtitle>
+  <!-- idsi:  {{item.key}} -->
+  </ion-card>
+  
+</ion-list>
+</form>
+
+</ion-content>

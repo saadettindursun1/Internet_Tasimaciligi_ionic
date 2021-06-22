@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+  <a href=""> <img src="../../assets/BUTONLAR/üst.jpg" alt=""> </a>
+
+
+    <a href="sofor"> <img src="../../assets/BUTONLAR/yolyardim.jpg" alt=""> </a>
+    <form ngForm="ngForm">
+      <ion-list class="mt-4 mb-2">
+        <ion-header class="text-center h3">Yol Yardım Giriş</ion-header>
+ <ion-item>
+  <ion-label position="floating">E Posta</ion-label>
+  <ion-input type="email" #mail></ion-input>     
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Parola</ion-label>
+  <ion-input type="password" #parola></ion-input>     
+</ion-item>
+    
+</ion-list>
+<ion-button fill="solid" expand="block"  color="dark" class="mt-3" (click)="giris(mail.value, parola.value)">Giriş Yap</ion-button> 
+<ion-item-divider  class="mt-2"><a href="yolyardim">Hemen Kayıt Ol</a></ion-item-divider>
+
+<ion-item-divider *ngIf="this.sonuc" class="alert alert-danger">Giriş Başarısız <br> E-Mail veya Parola Yanlış    </ion-item-divider>  
+</form>
+
+</ion-content>
+<!--===============================================================================================-->

@@ -1,0 +1,41 @@
+  <ion-img [src]='"../../assets/BUTONLAR/üst.jpg"'></ion-img>
+ 
+
+<ion-content>
+
+ 
+  <ion-tabs>
+    <ion-tab-bar slot="top" class=" mb-2">
+      <ion-tab-button [href]='"soforyardim"'>
+        <ion-icon name="eye-outline"></ion-icon>
+        <ion-label style="padding-bottom:5px ;">Yol yardım</ion-label>
+       <!-- <ion-badge>6</ion-badge> -->
+      </ion-tab-button>
+  
+      <ion-tab-button [href]='"tamamlanmis"'>
+        <ion-icon name="git-compare-outline"></ion-icon>
+        <ion-label style="padding-bottom:5px ;">Tamamlanmış İşler</ion-label>
+      </ion-tab-button>
+  
+  
+      <ion-tab-button [href]='"sofor-ekran"' >
+        <ion-icon name="cog-outline"></ion-icon>
+        <ion-label style="padding-bottom:5px ;">İş İlanları</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button [href]='"sofor-ayar"'  class="table-danger">
+        <ion-icon name="cog-outline"></ion-icon>
+        <ion-label style="padding-bottom:5px ;">Diğer İşlemler</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+<form #frm="ngForm">
+<br><br>
+<ion-list class="mt-5">
+  <ion-button name="btn" fill="solid" expand="block"  color="warning" class="mt-3">  <ion-icon name="arrow-back-outline" class="mr-2"></ion-icon> Geri Dön</ion-button>
+  <ion-button routerLink="/soforguncelle" name="btn" fill="solid" expand="block"  color="warning" class="mt-3">  <ion-icon name="pencil-sharp" class="mr-2"></ion-icon>Profili Güncelle</ion-button>
+  <ion-button name="btn" fill="solid" expand="block"  color="dark" class="mt-3" (click)="this.cikisYap()">  <ion-icon name="close-circle-outline" class="mr-2"></ion-icon>Çıkış</ion-button>
+  
+</ion-list>
+</form>
+</ion-content>

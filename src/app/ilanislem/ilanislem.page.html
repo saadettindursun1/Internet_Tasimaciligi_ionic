@@ -1,0 +1,85 @@
+
+  <ion-img [src]='"../../assets/BUTONLAR/üst.jpg"'></ion-img>
+
+
+
+<ion-content>
+
+  <ion-tabs style="height: 50px;">
+   <ion-tab-bar slot="top">
+      <ion-tab-button [href]='"verilenler"'>
+        <ion-icon name="eye-outline"></ion-icon>
+        <ion-label>Verilen İşler</ion-label>
+       <!-- <ion-badge>6</ion-badge> -->
+      </ion-tab-button>
+  
+      <ion-tab-button [href]='"ilanislem"' class="table-danger">
+        <ion-icon name="git-compare-outline"></ion-icon>
+        <ion-label>İlan Sil/Güncelle</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button  [href]='"ilanpaylas"'>
+        <ion-icon name="add-outline"></ion-icon>
+        <ion-label>İlan Paylaş</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button [href]='"ayarlar"'>
+        <ion-icon name="cog-outline"></ion-icon>
+        <ion-label>Diğer İşlemler</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs><br>
+  
+
+<form #ilanlar="ngForm">
+<ion-list class="mt-5"  *ngIf="!duzen">
+ 
+  <ion-card class="ilan mt-3 mr-3 ml-3" style="z-index: 1;" *ngFor="let item of kayitlar">
+    <ion-card-title class="alert-primary text-center h5 pt-2 pb-2 baslik">{{item.yuklemeNoktasi}} - {{item.indirmeNoktasi}} Arası</ion-card-title>
+    <ion-card-content>
+      <ion-label class="float-right">{{item.kayitTarih.replace('/Date(','').replace(')/','') |
+        date:"dd/MM/yyyy"}}</ion-label><br>
+      {{item.yukCins}} <br> {{item.yukAgirlik}} <br> {{item.ucret}} ₺</ion-card-content>
+    <ion-card-subtitle class="alert-warning">
+      <ion-button fill="solid" class="butonlar bg-primary"  color="primary" (click)="isletmeAdi=item.isletmeAdi;
+      yukCins=item.yukCins;
+      yukAgirlik=item.yukAgirlik;
+      yuklemeNoktasi=item.yuklemeNoktasi;
+      indirmeNoktasi=item.indirmeNoktasi;
+      telNo=item.telNo;
+      ucret=item.ucret;
+      aracTur=item.aracTur;
+      kayitTarih=item.kayitTarih;
+      firmaid=item.firmaid;
+      silinen=item.key; 
+      this.duzen=true;">Verildi say</ion-button>
+      <ion-button fill="solid" class="butonlar bg-warning"  color="warning">Güncelle</ion-button>
+      <ion-button name="btn"  fill="solid" class="butonlar bg-danger"  color="danger" (click)="this.silinen=item.key;verileniSil();" >Sil</ion-button>
+    </ion-card-subtitle>
+  <!-- idsi:  {{item.key}} -->
+  </ion-card>
+  
+</ion-list>
+</form>
+<form #frm="ngForm">
+<ion-list class="mt-5" *ngIf="duzen">
+  <ion-card>
+     <ion-card-title class="alert-primary text-center mt-3">
+      {{yuklemeNoktasi}} - {{indirmeNoktasi}} Arası     
+     </ion-card-title>
+     <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Şöför E mail</ion-label>
+        <ion-input type="email"  name="mailsofor" [(ngModel)]="this.soformail" required ></ion-input>     
+      </ion-item>  
+      <ion-item>
+        <ion-label position="floating">Şöför Tel</ion-label>
+        <ion-input type="number"  name="telefon" [(ngModel)]="this.soforTel" required ></ion-input>     
+      </ion-item>  
+     </ion-card-content>
+  </ion-card>
+  <ion-button fill="solid" expand="block"  [disabled]="frm.invalid"   color="primary" (click)="verildi();duzen=false;">Verildi say</ion-button>
+
+</ion-list>
+</form>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "tasimacilik",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

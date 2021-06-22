@@ -1,0 +1,130 @@
+<ion-item-divider class="mt-2">
+  <ion-img [src]='"../../assets/BUTONLAR/üst.jpg"'></ion-img>
+ </ion-item-divider>
+
+<ion-content>
+
+
+<form #frm="ngForm">
+<hr>
+  <div *ngFor="let item of kayitlar" class="card  h4">
+    
+    <ion-item>
+      <ion-label position="floating">Firma Adı ( {{item.adSoyad}} )</ion-label>
+      <ion-input type="text" name="isletmeAdi" #isletmeAdi [(ngModel)]="guncellenenKayit.adSoyad"  required ></ion-input>     
+ </ion-item>
+
+ <ion-item>
+  <ion-label position="floating">Tel No ( {{item.telNo}} )</ion-label>
+  <ion-input type="text" name="telNo" #telNo [(ngModel)]="guncellenenKayit.telNo"  required ></ion-input>     
+</ion-item>
+ 
+ <ion-item>
+  <ion-label position="floating">Plaka( {{item.plaka}} )</ion-label>
+  <ion-input type="text" name="plaka" #telNo [(ngModel)]="guncellenenKayit.plaka"  required ></ion-input>     
+</ion-item>
+
+
+ <ion-item>
+  <ion-label position="floating" class="mb-3">Şehir Seçiniz ( {{item.konum}} )         
+  </ion-label>
+<ion-select  name="konum" #konum [(ngModel)]="guncellenenKayit.konum" >
+  <ion-select-option>Adana</ion-select-option>
+  <ion-select-option>Adıyaman</ion-select-option>
+  <ion-select-option>Afyonkarahisar</ion-select-option>
+  <ion-select-option>Ağrı</ion-select-option>
+  <ion-select-option>Amasya</ion-select-option>
+  <ion-select-option>Ankara</ion-select-option>
+  <ion-select-option>Antalya</ion-select-option>
+  <ion-select-option>Artvin</ion-select-option>
+  <ion-select-option>Aydın</ion-select-option>
+  <ion-select-option>Balıkesir</ion-select-option>
+  <ion-select-option>Bilecik</ion-select-option>
+  <ion-select-option>Bingöl</ion-select-option>
+  <ion-select-option>Bitlis</ion-select-option>
+  <ion-select-option>Bolu</ion-select-option>
+  <ion-select-option>Burdur</ion-select-option>
+  <ion-select-option>Bursa</ion-select-option>
+  <ion-select-option>Çanakkale</ion-select-option>
+  <ion-select-option>Çankırı</ion-select-option>
+  <ion-select-option>Çorum</ion-select-option>
+  <ion-select-option>Denizli</ion-select-option>
+  <ion-select-option>Diyarbakır</ion-select-option>
+  <ion-select-option>Edirne</ion-select-option>
+  <ion-select-option>Elazığ</ion-select-option>
+  <ion-select-option>Erzincan</ion-select-option>
+  <ion-select-option>Erzurum</ion-select-option>
+  <ion-select-option>Eskişehir</ion-select-option>
+  <ion-select-option>Gaziantep</ion-select-option>
+  <ion-select-option>Giresun</ion-select-option>
+  <ion-select-option>Gümüşhane</ion-select-option>
+  <ion-select-option>Hakkâri</ion-select-option>
+  <ion-select-option>Hatay</ion-select-option>
+  <ion-select-option>Isparta</ion-select-option>
+  <ion-select-option>Mersin</ion-select-option>
+  <ion-select-option>İstanbul</ion-select-option>
+  <ion-select-option>İzmir</ion-select-option>
+  <ion-select-option>Kars</ion-select-option>
+  <ion-select-option>Kastamonu</ion-select-option>
+  <ion-select-option>Kayseri</ion-select-option>
+  <ion-select-option>Kırklareli</ion-select-option>
+  <ion-select-option>Kırşehir</ion-select-option>
+  <ion-select-option>Kocaeli</ion-select-option>
+  <ion-select-option>Konya</ion-select-option>
+  <ion-select-option>Kütahya</ion-select-option>
+  <ion-select-option>Malatya</ion-select-option>
+  <ion-select-option>Manisa</ion-select-option>
+  <ion-select-option>Kahramanmaraş</ion-select-option>
+  <ion-select-option>Mardin</ion-select-option>
+  <ion-select-option>Muğla</ion-select-option>
+  <ion-select-option>Muş</ion-select-option>
+  <ion-select-option>Nevşehir</ion-select-option>
+  <ion-select-option>Niğde</ion-select-option>
+  <ion-select-option>Ordu</ion-select-option>
+  <ion-select-option>Rize</ion-select-option>
+  <ion-select-option>Sakarya</ion-select-option>
+  <ion-select-option>Samsun</ion-select-option>
+  <ion-select-option>Siirt</ion-select-option>
+  <ion-select-option>Sinop</ion-select-option>
+  <ion-select-option>Sivas</ion-select-option>
+  <ion-select-option>Tekirdağ</ion-select-option>
+  <ion-select-option>Tokat</ion-select-option>
+  <ion-select-option>Trabzon</ion-select-option>
+  <ion-select-option>Tunceli</ion-select-option>
+  <ion-select-option>Şanlıurfa</ion-select-option>
+  <ion-select-option>Uşak</ion-select-option>
+  <ion-select-option>Van</ion-select-option>
+  <ion-select-option>Yozgat</ion-select-option>
+  <ion-select-option>Zonguldak</ion-select-option>
+  <ion-select-option>Aksaray</ion-select-option>
+  <ion-select-option>Bayburt</ion-select-option>
+  <ion-select-option>Karaman</ion-select-option>
+  <ion-select-option>Kırıkkale</ion-select-option>
+  <ion-select-option>Batman</ion-select-option>
+  <ion-select-option>Şırnak</ion-select-option>
+  <ion-select-option>Bartın</ion-select-option>
+  <ion-select-option>Ardahan</ion-select-option>
+  <ion-select-option>Iğdır</ion-select-option>
+  <ion-select-option>Yalova</ion-select-option>
+  <ion-select-option>Karabük</ion-select-option>
+  <ion-select-option>Kilis</ion-select-option>
+  <ion-select-option>Osmaniye</ion-select-option>
+  <ion-select-option>Düzce</ion-select-option>
+</ion-select>  
+</ion-item>
+
+
+
+<hr>
+<button class="btn btn-success btn-block" (click)="this.guncelleme();" >Güncelle</button>
+</div>
+
+<div class="alert alert-primary" *ngIf="durum" role="alert">
+  Güncelleme Başarılı
+</div>
+<ion-list class="mt-5">
+  <ion-button name="btn" routerLink="../sofor-ayar" fill="solid" expand="block"  color="warning" class="mt-3">  <ion-icon name="arrow-back-outline" class="mr-2"></ion-icon> Geri Dön</ion-button>
+  
+</ion-list>
+</form>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-item-divider class="mt-2">
+  <ion-img [src]='"../../assets/BUTONLAR/üst.jpg"'></ion-img>
+ </ion-item-divider>
+
+<ion-content>
+
+
+<form #frm="ngForm">
+<hr>
+  <div *ngFor="let item of kayitlar" class="text-center h4">
+  HOŞGELDİNİZ.. {{item.isletmeAdi}}
+</div>
+<ion-list class="mt-5">
+  <ion-button name="btn" routerLink="../yolyardimguncelle" fill="solid" expand="block"  color="warning" class="mt-3">  <ion-icon name="pencil-sharp" class="mr-2"></ion-icon>Profili Güncelle</ion-button>
+  <ion-button name="btn" fill="solid" expand="block"  color="dark" class="mt-3" (click)="this.cikisYap()">  <ion-icon name="close-circle-outline" class="mr-2"></ion-icon>Çıkış</ion-button>
+  
+</ion-list>
+</form>
+</ion-content>

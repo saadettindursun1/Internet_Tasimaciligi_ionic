@@ -1,0 +1,56 @@
+
+  <ion-img [src]='"../../assets/BUTONLAR/üst.jpg"'></ion-img>
+
+
+
+<ion-content>
+ 
+  <ion-tabs class="mb-5 fixed-top" style="height: 50px;" >
+   
+    <ion-tab-bar slot="top">
+    
+      <ion-tab-button [href]='"verilenler"'   class="table-danger">
+        <ion-icon name="eye-outline"></ion-icon>
+        <ion-label>Verilen İşler</ion-label>
+       <!-- <ion-badge>6</ion-badge> -->
+      </ion-tab-button>
+  
+      <ion-tab-button [href]='"ilanislem"' >
+        <ion-icon name="git-compare-outline"></ion-icon>
+        <ion-label>İlan Sil/Güncelle</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button  [href]='"ilanpaylas"'>
+        <ion-icon name="add-outline"></ion-icon>
+        <ion-label>İlan Paylaş</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button [href]='"ayarlar"'>
+        <ion-icon name="cog-outline"></ion-icon>
+        <ion-label>Diğer İşlemler</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+<form #ilanlar="ngForm">
+<ion-list class="mt-5">
+ 
+  <ion-card class="ilan mt-3 mr-3 ml-3" *ngFor="let item of kayitlar">
+    <ion-card-title class="alert-primary text-center">{{item.yuklemeNoktasi}} - {{item.indirmeNoktasi}} Arası</ion-card-title>
+    <ion-card-content>
+      <ion-label class="float-right">
+        {{item.kayitTarih.replace('/Date(','').replace(')/','') |
+        date:"dd/MM/yyyy"}}</ion-label><br>
+        Şöför Tel No : {{item.soforTel}} <br>
+        Şöför Mail : {{item.soformail}} <br>
+      {{item.yukCins}} <br> {{item.yukAgirlik}} <br> {{item.ucret}} ₺</ion-card-content>
+    <ion-card-subtitle class="alert-warning">
+      <ion-button name="btn"  fill="solid" class="butonlar bg-danger" expand="block"  color="danger" (click)="silGitsin(item.key);" >SİL</ion-button>
+    </ion-card-subtitle>
+  <!-- idsi:  {{item.key}} -->
+  </ion-card>
+  
+</ion-list>
+</form>
+
+</ion-content>
